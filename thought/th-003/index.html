@@ -667,7 +667,7 @@ From my present perspective, duospace appears to be the most realistic choice fo
     
         let aborter = null;
     
-        const basePath = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+        const basePath = new URL("https://jaehyeonleeweb.github.io/j-h-2026").pathname.replace(/\/$/, "");
 
         function isHomeLink(a) {
           if (!a || !a.href) return false;
@@ -885,7 +885,7 @@ From my present perspective, duospace appears to be the most realistic choice fo
     titleEl.addEventListener("click", (e) => {
       e.preventDefault();
   
-      const basePath = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+      const basePath = new URL("https://jaehyeonleeweb.github.io/j-h-2026").pathname.replace(/\/$/, "");
       const IS_HOME =
         window.location.pathname === basePath + "/" ||
         window.location.pathname === basePath + "/kr/";
@@ -1089,7 +1089,7 @@ From my present perspective, duospace appears to be the most realistic choice fo
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const base = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+      const base = new URL("https://jaehyeonleeweb.github.io/j-h-2026").pathname.replace(/\/$/, "");
       if (!base) return;
       document.querySelectorAll("img[src]").forEach(img => {
         const src = img.getAttribute("src");
