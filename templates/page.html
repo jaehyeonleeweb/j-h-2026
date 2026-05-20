@@ -556,12 +556,14 @@
     
         let aborter = null;
     
+        const basePath = new URL("{{ config.base_url }}").pathname.replace(/\/$/, "");
+
         function isHomeLink(a) {
           if (!a || !a.href) return false;
           try {
             const url = new URL(a.href);
             if (url.origin !== location.origin) return false;
-            return url.pathname === "/" || url.pathname === "/kr/";
+            return url.pathname === basePath + "/" || url.pathname === basePath + "/kr/";
           } catch {
             return false;
           }

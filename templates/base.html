@@ -23,10 +23,10 @@
     <title>{% if page %}{{ page.title }}, {% endif %}{{ config.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="{{ get_url(path="favicon.ico") }}" sizes="any">
+    <link rel="icon" href="{{ get_url(path="favicon.svg") }}" type="image/svg+xml">
 
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="{{ get_url(path="css/main.css") }}">
   </head>
 
   <body>
@@ -44,20 +44,20 @@
        {% endif %}
       </button>
 
-      <a href="{{ langprefix }}/" class="site-title" id="site-title"></a>
+      <a href="{{ get_url(path=langprefix ~ "/") }}" class="site-title" id="site-title"></a>
 
       <span class="lang-toggle" data-lang="{{ page_lang }}">
         {% if page_lang == "kr" %}
         <span class="ko">한</span>
         <span class="sep"> / </span>
         {% if current_path == "kr/" or current_path == "/kr/" %}
-          <a href="/" class="en">EN</a>
+          <a href="{{ get_url(path="/") }}" class="en">EN</a>
         {% else %}
-          <a href="{{ current_path | replace(from='/kr/', to='/') | replace(from='kr/', to='/') }}" class="en">EN</a>
+          <a href="{{ get_url(path=current_path | replace(from='/kr/', to='/') | replace(from='kr/', to='/')) }}" class="en">EN</a>
         {% endif %}
         {% else %}
           <a
-            href="/kr{{ current_path }}"
+            href="{{ get_url(path="/kr" ~ current_path) }}"
             class="ko"
           >한</a>
           <span class="sep"> / </span>
@@ -74,16 +74,16 @@
       hidden
     >
       {% if page_lang == "kr" %}
-        <a href="{{ langprefix }}/allarchive/">모든 아카이브</a>
-        {# <a href="{{ langprefix }}/works/">작업들</a> #}
-        <a href="{{ langprefix }}/about/">이 웹에 대하여</a>
-        <a href="{{ langprefix }}/contact/">연락처</a>
+        <a href="{{ get_url(path=langprefix ~ "/allarchive/") }}">모든 아카이브</a>
+        {# <a href="{{ get_url(path=langprefix ~ "/works/") }}">작업들</a> #}
+        <a href="{{ get_url(path=langprefix ~ "/about/") }}">이 웹에 대하여</a>
+        <a href="{{ get_url(path=langprefix ~ "/contact/") }}">연락처</a>
         <span class="menu-item--disabled" aria-disabled="true">구매</span>
       {% else %}
-        <a href="{{ langprefix }}/allarchive/">All Archive</a>
-        {# <a href="{{ langprefix }}/works/">Works</a> #}
-        <a href="{{ langprefix }}/about/">About</a>
-        <a href="{{ langprefix }}/contact/">Contact</a>
+        <a href="{{ get_url(path=langprefix ~ "/allarchive/") }}">All Archive</a>
+        {# <a href="{{ get_url(path=langprefix ~ "/works/") }}">Works</a> #}
+        <a href="{{ get_url(path=langprefix ~ "/about/") }}">About</a>
+        <a href="{{ get_url(path=langprefix ~ "/contact/") }}">Contact</a>
         <span class="menu-item--disabled" aria-disabled="true">Shop</span>
       {% endif %}
     </nav>
@@ -209,9 +209,10 @@
     titleEl.addEventListener("click", (e) => {
       e.preventDefault();
   
+      const basePath = new URL("{{ config.base_url }}").pathname.replace(/\/$/, "");
       const IS_HOME =
-        window.location.pathname === "/" ||
-        window.location.pathname === "/kr/";
+        window.location.pathname === basePath + "/" ||
+        window.location.pathname === basePath + "/kr/";
   
       if (!IS_HOME) {
         window.location.href = titleEl.href;
