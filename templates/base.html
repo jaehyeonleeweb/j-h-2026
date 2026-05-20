@@ -411,5 +411,18 @@
     </script>
 
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const base = new URL("{{ config.base_url }}").pathname.replace(/\/$/, "");
+      if (!base) return;
+      document.querySelectorAll("img[src]").forEach(img => {
+        const src = img.getAttribute("src");
+        if (src && src.startsWith("/") && !src.startsWith(base + "/")) {
+          img.setAttribute("src", base + src);
+        }
+      });
+    });
+  </script>
+
   </body>
 </html>
