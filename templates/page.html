@@ -556,7 +556,7 @@
     
         let aborter = null;
     
-        const basePath = new URL("{{ config.base_url }}").pathname.replace(/\/$/, "");
+        const basePath = new URL("{{ config.base_url | safe }}").pathname.replace(/\/$/, "");
 
         function isHomeLink(a) {
           if (!a || !a.href) return false;

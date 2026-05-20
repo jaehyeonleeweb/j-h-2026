@@ -94,28 +94,28 @@ em {
 
 @font-face {
   font-family: "JH Web Duo";
-  src: url("/fonts/JHWebDuo-Regular.woff") format("woff");
+  src: url("../fonts/JHWebDuo-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "JH Web Duo";
-  src: url("/fonts/JHWebDuo-Italic.woff") format("woff");
+  src: url("../fonts/JHWebDuo-Italic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "JH Web Duo";
-  src: url("/fonts/JHWebDuo-Bold.woff") format("woff");
+  src: url("../fonts/JHWebDuo-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "JH Web Duo";
-  src: url("/fonts/JHWebDuo-BoldItalic.woff") format("woff");
+  src: url("../fonts/JHWebDuo-BoldItalic.woff") format("woff");
   font-weight: 700;
   font-style: italic;
 }
