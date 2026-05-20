@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<script>
+  console.log("current_path:", "/shop/");
+</script>
+
+<script>
+  console.log("lang:", "en");
+  console.log("section.lang:", "en");
+  console.log("page.lang:", "(no page)");
+</script>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>J-H</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="https://jaehyeonleeweb.github.io/j-h-2026/favicon.ico" sizes="any">
+    <link rel="icon" href="https://jaehyeonleeweb.github.io/j-h-2026/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://jaehyeonleeweb.github.io/j-h-2026/css/main.css">
+  </head>
+
+  <body>
+    <header class="header" role="banner">
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="global-menu"
+      >
+       
+          MENU
+       
+      </button>
+
+      <a href="https://jaehyeonleeweb.github.io/j-h-2026" class="site-title" id="site-title"></a>
+
+      <span class="lang-toggle" data-lang="en">
+        
+          <a
+            href="https://jaehyeonleeweb.github.io/j-h-2026/kr/shop"
+            class="ko"
+          >한</a>
+          <span class="sep"> / </span>
+          <span class="en">EN</span>
+        
+      </span>
+      
+    </header>
+
+    <nav
+      id="global-menu"
+      class="global-menu"
+      aria-label="primary"
+      hidden
+    >
+      
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/allarchive">All Archive</a>
+        
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/about">About</a>
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/contact">Contact</a>
+        <span class="menu-item--disabled" aria-disabled="true">Shop</span>
+      
+    </nav>
+
+    <main id="content">
+      
+
+  <div class="grid thumbs">
+    
+    
+      
+      
+
+      <a href="https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026&#x2F;shop&#x2F;sh-001&#x2F;" class="card">
+        <div class="thumb">
+          
+            <img src="&#x2F;media&#x2F;shop&#x2F;thumbnail&#x2F;th_sh-001.webp"
+                 alt="Test Production"
+                 loading="lazy" decoding="async" fetchpriority="low"
+                 sizes="(max-width:600px) 50vw, (max-width:900px) 33vw, 20vw">
+          
+        </div>
+        <div class="meta">
+          <h3 class="title">Test Production</h3>
+          <div class="subtle">100,000 KRW</div>
+        </div>
+      </a>
+    
+  </div>
+
+
+    </main>
+
+<footer class="footer" role="contentinfo">
+  <p class="footer__text">
+    © 2026 <span id="footer-site-title"></span><span class="footer-sep"></span>
+    
+      <span class="footer-msg">This website is <span id="footer-variant">(for a while)</span> in the making.</span>
+    
+  </p>
+
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("global-menu");
+    if (!btn || !menu) return;
+
+    const openMenu = () => {
+      menu.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+    };
+
+    const closeMenu = () => {
+      menu.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    };
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      expanded ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  });
+</script>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentHost = window.location.hostname;
+        document
+          .querySelectorAll('a[href^="http"]')
+          .forEach(link => {
+            const url = new URL(link.href);
+            if (url.hostname !== currentHost) {
+              link.setAttribute("target", "_blank");
+              link.setAttribute("rel", "noopener noreferrer");
+            }
+          });
+      });
+    </script>
+
+
+<script>
+  const SITE_TITLES = [
+    "J-H",
+    "j-h",
+    "Jaydashaitch",
+    "제이대시에이치",
+    "제이(대시)에이치",
+    "JAY(DASH)AITCH",
+    "Jaehyeon Lee",
+    "Jae-Hyeon",
+    "jay-aitch",
+    "JAE(DASH)HYEON"
+  ];
+  
+  function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)];
+  }
+  
+  function pickRandomDifferent(list, current) {
+    const pool = list.filter(item => item !== current);
+    return pool.length
+      ? pool[Math.floor(Math.random() * pool.length)]
+      : current;
+  }
+  
+  (function () {
+    const titleEl = document.getElementById("site-title");
+    const footerEl = document.getElementById("footer-site-title");
+    if (!titleEl || !footerEl) return;
+  
+    const KEY = "jh_site_title";
+  
+    const renderTitle = (el, text) => {
+      el.innerHTML = "";
+      [...text].forEach(char => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        el.appendChild(span);
+      });
+    };
+  
+    if (!sessionStorage.getItem(KEY)) {
+      sessionStorage.setItem(KEY, pickRandom(SITE_TITLES));
+    }
+  
+    const initial = sessionStorage.getItem(KEY);
+    renderTitle(titleEl, initial);
+    footerEl.textContent = initial;
+  
+    titleEl.addEventListener("click", (e) => {
+      e.preventDefault();
+  
+      const basePath = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+      const IS_HOME =
+        window.location.pathname === basePath + "/" ||
+        window.location.pathname === basePath + "/kr/";
+  
+      if (!IS_HOME) {
+        window.location.href = titleEl.href;
+        return;
+      }
+  
+      const current = sessionStorage.getItem(KEY);
+      const next = pickRandomDifferent(SITE_TITLES, current);
+      sessionStorage.setItem(KEY, next);
+  
+      const layer = document.createElement("div");
+      layer.className = "falling-layer";
+      document.body.appendChild(layer);
+  
+      [...titleEl.children].forEach(originalSpan => {
+        const rect = originalSpan.getBoundingClientRect();
+  
+        const span = document.createElement("span");
+        span.className = "falling-char";
+        span.textContent = originalSpan.textContent;
+  
+        span.style.left = `${rect.left}px`;
+        span.style.top = `${rect.top}px`;
+        span.style.animationDelay = `${Math.random() * 0.15}s`;
+        span.style.animationDuration = `${1.2 + Math.random() * 1.6}s`;
+  
+        layer.appendChild(span);
+      });
+  
+      titleEl.classList.add("is-switching");
+  
+      renderTitle(titleEl, next);
+      footerEl.textContent = next;
+  
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          titleEl.classList.remove("is-switching");
+        });
+      });
+  
+      setTimeout(() => {
+        layer.remove();
+      }, 2000);
+    });
+  })();
+</script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const target = document.getElementById("footer-variant");
+        if (!target) return;
+      
+        const lang = document.documentElement.lang;
+      
+        const variants = lang === "ko"
+          ? [
+              "(한동안은)",
+              "(당분간은)",
+              "(얼마간은)",
+              "(현재로서는)",
+              "(일단은)",
+              "(우선은)",
+              "(잠시나마)",
+              "(당장까지는)",
+              "(지금으로서는)",
+              "(일정 기간동안은)",
+              "(잠정적으로)",
+              "(잠시 동안은)",
+              "(지금은 계속)"
+            ]
+          : [
+              "(for a while)",
+              "(for now)",
+              "(for the time being)",
+              "(temporarily)",
+              "(for the moment)",
+              "(in the meantime)",
+              "(for some time)",
+              "(briefly)",
+              "(until further notice)",
+              "(as of now)",
+              "(for a certain period)",
+              "(still)",
+              "(for a short while)"
+            ];
+      
+        let current = target.textContent;
+      
+        const pickNext = () => {
+          let next;
+          do {
+            next = variants[Math.floor(Math.random() * variants.length)];
+          } while (next === current);
+      
+          current = next;
+          target.textContent = next;
+        };
+      
+        setInterval(pickNext, 1000);
+      });
+      </script>
+  
+  <script>
+    (function () {
+    
+      const tooltip = document.createElement("div");
+      tooltip.id = "menu-tooltip";
+      document.body.appendChild(tooltip);
+    
+      const canHover = window.matchMedia("(hover: hover)").matches;
+    
+      function position(x, y) {
+        const offset = 6;
+    
+        tooltip.style.left = x + offset + "px";
+        tooltip.style.top = y + "px";
+    
+        tooltip.style.height = "";
+        tooltip.style.lineHeight = "";
+    
+        tooltip.style.bottom = "";
+        tooltip.style.transform = "";
+      }
+    
+      function show(message, x, y) {
+        tooltip.textContent = message;
+        tooltip.classList.add("is-visible");
+    
+        position(x, y);
+    
+        if (!canHover) {
+          clearTimeout(tooltip._timer);
+    
+          tooltip._timer = setTimeout(() => {
+            tooltip.classList.remove("is-visible");
+          }, 900);
+        }
+      }
+    
+      function getTextRect(el) {
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        return range.getBoundingClientRect();
+      }
+    
+      if (canHover) {
+    
+        document.addEventListener("mouseover", (e) => {
+    
+          const disabled = e.target.closest(".menu-item--disabled");
+          if (!disabled) return;
+    
+          const lang = document.documentElement.lang;
+    
+          show(
+            lang === "ko" ? "준비중..." : "Coming soon...",
+            e.clientX,
+            e.clientY
+          );
+    
+        });
+    
+        document.addEventListener("mousemove", (e) => {
+          if (!tooltip.classList.contains("is-visible")) return;
+    
+          position(e.clientX, e.clientY);
+        });
+    
+        document.addEventListener("mouseout", (e) => {
+          if (!e.target.closest(".menu-item--disabled")) return;
+    
+          tooltip.classList.remove("is-visible");
+        });
+    
+      } else {
+    
+        document.addEventListener("touchstart", (e) => {
+    
+          const disabled = e.target.closest(".menu-item--disabled");
+          if (!disabled) return;
+    
+          const lang = document.documentElement.lang;
+          const rect = getTextRect(disabled);
+    
+          show(
+            lang === "ko" ? "준비중..." : "Coming soon...",
+            rect.right,
+            rect.top
+          );
+    
+        });
+    
+      }
+    
+    })();
+    </script>
+
+
+  </body>
+</html>

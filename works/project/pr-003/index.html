@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<script>
+  console.log("current_path:", "/works/project/pr-003/");
+</script>
+
+<script>
+  console.log("lang:", "en");
+  console.log("section.lang:", "(no section)");
+  console.log("page.lang:", "en");
+</script>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Random Silhouette, J-H</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="https://jaehyeonleeweb.github.io/j-h-2026/favicon.ico" sizes="any">
+    <link rel="icon" href="https://jaehyeonleeweb.github.io/j-h-2026/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://jaehyeonleeweb.github.io/j-h-2026/css/main.css">
+  </head>
+
+  <body>
+    <header class="header" role="banner">
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="global-menu"
+      >
+       
+          MENU
+       
+      </button>
+
+      <a href="https://jaehyeonleeweb.github.io/j-h-2026" class="site-title" id="site-title"></a>
+
+      <span class="lang-toggle" data-lang="en">
+        
+          <a
+            href="https://jaehyeonleeweb.github.io/j-h-2026/kr/works/project/pr-003"
+            class="ko"
+          >한</a>
+          <span class="sep"> / </span>
+          <span class="en">EN</span>
+        
+      </span>
+      
+    </header>
+
+    <nav
+      id="global-menu"
+      class="global-menu"
+      aria-label="primary"
+      hidden
+    >
+      
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/allarchive">All Archive</a>
+        
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/about">About</a>
+        <a href="https://jaehyeonleeweb.github.io/j-h-2026/contact">Contact</a>
+        <span class="menu-item--disabled" aria-disabled="true">Shop</span>
+      
+    </nav>
+
+    <main id="content">
+      
+
+<article class="page-two-col" role="article">
+
+  <aside class="page-meta" role="complementary">
+
+    <div class="meta-block meta-title">
+      <strong>Random Silhouette</strong>
+    </div>
+
+    <div class="meta-block meta-data">
+
+      
+        <div class="meta-line">
+          
+            Document No. → [9]
+          
+        </div>
+      
+    
+      
+        <div class="meta-line">
+          
+            Category → [Project]
+          
+        </div>
+      
+    
+      
+    
+    
+    
+      <div class="meta-line">
+        
+          Format →
+        
+    
+        
+        
+          [Poster, 594 x 841mm, Screenprint]
+        
+      </div>
+    
+    
+    
+    
+    
+    
+    
+      <div class="meta-line">
+        
+          Date →
+        
+    
+        
+        
+          [Apr 2024]
+        
+      </div>
+    
+
+      
+  
+  
+    
+    </div>
+    
+
+    
+    
+
+    
+    
+
+  </aside>
+
+  <div class="page-body page-content">
+
+    <p>When using Adobe Illustrator’s <a href="/method/mt-002/"><em>Image Trace</em></a> feature to convert bitmap images into vector images, you sometimes get unexpected results. Occasionally, those accidental shapes can be quite satisfying.
+<br><br></p>
+<figure class="" style="">
+  <img src="/media/works/project/pr-003/random silhouette.webp" alt="random silhouette">
+  <figcaption>Random Silhouette(2024)</figcaption>
+</figure>
+
+  </div>
+
+</article>
+
+<div id="image-viewer" aria-hidden="true">
+  <button class="viewer-close" aria-label="Close">×</button>
+  <button class="viewer-prev" aria-label="Previous">←</button>
+  <img class="viewer-image" alt="" />
+  <button class="viewer-next" aria-label="Next">→</button>
+</div>
+
+
+<script>
+  (function () {
+  
+    function isVisible(el) {
+      return !!(el && el.offsetParent !== null);
+    }
+  
+    function isInViewport(el) {
+      if (!el) return false;
+      const r = el.getBoundingClientRect();
+      return r.bottom > 0 && r.top < window.innerHeight;
+    }
+  
+    function scrollToRef(el, block) {
+      if (!el) return;
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: block
+      });
+    }
+  
+    function scrollDocumentToRevealMeta() {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+  
+    function setActiveFootnote(id) {
+      history.pushState(null, "", "#" + id);
+  
+      document.querySelectorAll(".meta-note").forEach(el => {
+        el.classList.toggle("is-active", el.dataset.fnid === id);
+      });
+  
+      document.querySelectorAll(".footnotes-list li[id]").forEach(el => {
+        el.classList.toggle("is-active", el.id === id);
+      });
+    }
+  
+    const mqDesktop = window.matchMedia("(min-width: 600px)");
+  
+    document.addEventListener("click", function (e) {
+  
+      const meta = e.target.closest(".meta-note[data-fnid]");
+      if (meta) {
+        if (e.target.closest("a")) return;
+  
+        const id = meta.dataset.fnid;
+        if (!id) return;
+  
+        const ref = document.querySelector(
+          '.footnote-reference a[href="#' + id + '"]'
+        );
+        if (!ref) return;
+  
+        scrollToRef(ref, "start");
+        setActiveFootnote(id);
+        return;
+      }
+  
+      const def = e.target.closest(".footnotes-list li[id]");
+      if (def) {
+        if (e.target.closest("a")) return;
+  
+        const id = def.id;
+        if (!id) return;
+  
+        const ref = document.querySelector(
+          '.footnote-reference a[href="#' + id + '"]'
+        );
+        if (!ref) return;
+  
+        scrollToRef(ref, "start");
+        setActiveFootnote(id);
+        return;
+      }
+  
+      const refLink = e.target.closest(".footnote-reference a[href^='#']");
+      if (!refLink) return;
+  
+      e.preventDefault();
+  
+      const id = refLink.getAttribute("href").slice(1);
+      if (!id) return;
+  
+      setActiveFootnote(id);
+  
+      if (mqDesktop.matches) {
+        const metaTarget = document.querySelector(
+          ".meta-note[data-fnid='" + id + "']"
+        );
+  
+        if (metaTarget && isVisible(metaTarget)) {
+          if (!isInViewport(metaTarget)) {
+            scrollDocumentToRevealMeta(metaTarget);
+          }
+          return;
+        }
+      }
+  
+      const footTarget = document.getElementById(id);
+      if (footTarget && isVisible(footTarget)) {
+        scrollToRef(footTarget, "end");
+      }
+    });
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!location.hash.startsWith("#")) return;
+  
+      const id = location.hash.slice(1);
+      if (!id) return;
+  
+      setActiveFootnote(id);
+  
+      if (mqDesktop.matches) {
+        const metaTarget = document.querySelector(
+          ".meta-note[data-fnid='" + id + "']"
+        );
+        if (metaTarget && isVisible(metaTarget)) {
+          if (!isInViewport(metaTarget)) {
+            scrollDocumentToRevealMeta(metaTarget);
+          }
+          return;
+        }
+      }
+  
+      const footTarget = document.getElementById(id);
+      if (footTarget && isVisible(footTarget)) {
+        scrollToRef(footTarget, "end");
+      }
+    });
+  
+  })();
+  </script>  
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const PUNCTS = `"'\u2018\u201C([{‹«〈《「『`;
+    
+        const targets = document.querySelectorAll(
+  '.page-meta .meta-title, \
+   .page-meta .meta-line, \
+   .page-body .page-content p, \
+   .page-body .page-content li'
+);
+
+    
+      targets.forEach(el => {
+        const text = (el.textContent || '').trimStart();
+        if (!text) return;
+    
+        const firstChar = text[0];
+        if (!PUNCTS.includes(firstChar)) return;
+    
+        el.classList.add('hang-punct');
+      });
+    });
+    </script>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const superscriptMap = {
+          "0": "⁰",
+          "1": "¹",
+          "2": "²",
+          "3": "³",
+          "4": "⁴",
+          "5": "⁵",
+          "6": "⁶",
+          "7": "⁷",
+          "8": "⁸",
+          "9": "⁹"
+        };
+      
+        document
+          .querySelectorAll("sup.footnote-reference a")
+          .forEach(el => {
+            const text = el.textContent.trim();
+      
+            if (!/^\d+$/.test(text)) return;
+      
+            const superscript = [...text]
+              .map(d => superscriptMap[d] || d)
+              .join("");
+      
+            el.textContent = superscript;
+            el.setAttribute("aria-label", `Footnote ${text}`);
+          });
+      });
+      </script>
+      
+      <script>
+        (function () {
+          const root = document.querySelector(".page-body.page-content");
+          if (!root) return;
+
+          root.querySelectorAll("blockquote ol > li").forEach(li => {
+            if (li.querySelector(":scope > .li-body")) return;
+
+            const body = document.createElement("span");
+            body.className = "li-body";
+
+            const nodes = Array.from(li.childNodes);
+
+            nodes.forEach(node => {
+              if (
+                node.nodeType === Node.ELEMENT_NODE ||
+                (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "")
+              ) {
+                body.appendChild(node);
+              }
+            });
+
+            li.appendChild(body);
+          });
+        })();
+        </script>
+
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const root = document.querySelector(".page-body.page-content");
+            if (!root) return;
+          
+            root.querySelectorAll("p > strong").forEach(strong => {
+              const parent = strong.parentElement;
+              if (parent && parent.classList.contains("centered-strong")) return;
+          
+              const wrapper = document.createElement("span");
+              wrapper.className = "centered-strong";
+          
+              parent.replaceChild(wrapper, strong);
+              wrapper.appendChild(strong);
+            });
+          });
+          </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isMobile = window.matchMedia("(max-width: 600px)").matches;
+    
+      const images = Array.from(
+        document.querySelectorAll(".page-body.page-content figure img")
+      );
+      if (!images.length) return;
+    
+      const viewer = document.getElementById("image-viewer");
+      const viewerImg = viewer.querySelector(".viewer-image");
+      const btnClose = viewer.querySelector(".viewer-close");
+      const btnPrev = viewer.querySelector(".viewer-prev");
+      const btnNext = viewer.querySelector(".viewer-next");
+    
+      let currentIndex = 0;
+      let scrollY = 0;
+    
+      function lockScroll() {
+        scrollY = window.scrollY;
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+      }
+    
+      function unlockScroll() {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      }
+    
+      function openViewer(index) {
+        currentIndex = index;
+        viewerImg.src = images[currentIndex].src;
+        viewer.classList.add("is-open");
+        viewer.setAttribute("aria-hidden", "false");
+    
+        if (isMobile) lockScroll();
+      }
+    
+      function closeViewer() {
+        viewer.classList.remove("is-open");
+        viewer.setAttribute("aria-hidden", "true");
+    
+        if (isMobile) unlockScroll();
+      }
+    
+      function prev() {
+        if (currentIndex > 0) openViewer(currentIndex - 1);
+      }
+    
+      function next() {
+        if (currentIndex < images.length - 1) openViewer(currentIndex + 1);
+      }
+    
+      images.forEach((img, i) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openViewer(i));
+      });
+    
+
+      if (!isMobile) {
+        btnClose.addEventListener("click", closeViewer);
+        btnPrev.addEventListener("click", prev);
+        btnNext.addEventListener("click", next);
+    
+        viewerImg.addEventListener("click", closeViewer);
+        viewer.addEventListener("click", e => {
+          if (e.target === viewer) closeViewer();
+        });
+      }
+    
+      if (isMobile) {
+        viewer.addEventListener("click", closeViewer);
+    
+        let startX = 0;
+        let startY = 0;
+    
+        viewer.addEventListener(
+          "touchstart",
+          e => {
+            const t = e.touches[0];
+            startX = t.clientX;
+            startY = t.clientY;
+          },
+          { passive: true }
+        );
+    
+        viewer.addEventListener("touchend", e => {
+          const t = e.changedTouches[0];
+          const dx = t.clientX - startX;
+          const dy = t.clientY - startY;
+    
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            dx > 0 ? prev() : next();
+          }
+        });
+      }
+    
+      document.addEventListener("keydown", e => {
+        if (!viewer.classList.contains("is-open")) return;
+    
+        if (e.key === "Escape") closeViewer();
+        if (e.key === "ArrowLeft") prev();
+        if (e.key === "ArrowRight") next();
+      });
+    });
+    </script>
+    
+
+    <script>
+      (function () {
+        if (!window.matchMedia("(min-width: 601px)").matches) return;
+    
+        const preview = document.createElement("div");
+        preview.id = "link-preview";
+        document.body.appendChild(preview);
+    
+        let aborter = null;
+    
+        const basePath = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+
+        function isHomeLink(a) {
+          if (!a || !a.href) return false;
+          try {
+            const url = new URL(a.href);
+            if (url.origin !== location.origin) return false;
+            return url.pathname === basePath + "/" || url.pathname === basePath + "/kr/";
+          } catch {
+            return false;
+          }
+        }
+    
+        function isInternalLink(a) {
+          if (!a || !a.href) return false;
+          try {
+            return new URL(a.href).origin === location.origin;
+          } catch {
+            return false;
+          }
+        }
+    
+        function extractPreviewText(html) {
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const body = doc.querySelector(".page-body");
+          if (!body) return "";
+    
+          body.querySelectorAll(
+            "figure, img, pre, code, table, script, style, .footnotes, .footnotes-list, aside"
+          ).forEach(el => el.remove());
+    
+          body.querySelectorAll("sup").forEach(el => el.remove());
+    
+          const candidates = Array.from(body.querySelectorAll("p, li"))
+            .map(el => el.textContent.replace(/\s+/g, " ").trim())
+            .filter(text => text.length > 0);
+    
+          return candidates[0] || "";
+        }
+    
+        function positionPreview(e) {
+          const offset = 14;
+          const maxX = window.innerWidth - preview.offsetWidth - 8;
+          const maxY = window.innerHeight - preview.offsetHeight - 8;
+    
+          preview.style.left = Math.min(e.clientX + offset, maxX) + "px";
+          preview.style.top = Math.min(e.clientY + offset, maxY) + "px";
+        }
+    
+        document.addEventListener("mouseover", async (e) => {
+          const a = e.target.closest("a[href]");
+          if (!a) return;
+          if (a.closest("header")) return;
+          if (a.closest("sup")) return;
+    
+          aborter?.abort();
+          aborter = new AbortController();
+    
+          if (isHomeLink(a) && a.closest(".page-two-col")) {
+            preview.textContent = sessionStorage.getItem("jh_site_title") || "J—H";
+            preview.classList.add("is-visible");
+            positionPreview(e);
+            return;
+          }
+    
+          if (!isInternalLink(a) || !a.closest(".page-two-col")) return;
+    
+          try {
+            const res = await fetch(a.href, { signal: aborter.signal });
+            const html = await res.text();
+            const text = extractPreviewText(html);
+            if (!text) return;
+    
+            preview.textContent = text;
+            preview.classList.add("is-visible");
+            positionPreview(e);
+          } catch {}
+        });
+    
+        document.addEventListener("mousemove", (e) => {
+          if (!preview.classList.contains("is-visible")) return;
+          positionPreview(e);
+        });
+    
+        document.addEventListener("mouseout", (e) => {
+          const a = e.target.closest("a[href]");
+          if (!a) return;
+
+          if (a.contains(e.relatedTarget)) return;
+
+          preview.classList.remove("is-visible");
+          aborter?.abort();
+        });
+
+      })();
+    </script>
+    
+
+
+
+
+    </main>
+
+<footer class="footer" role="contentinfo">
+  <p class="footer__text">
+    © 2026 <span id="footer-site-title"></span><span class="footer-sep"></span>
+    
+      <span class="footer-msg">This website is <span id="footer-variant">(for a while)</span> in the making.</span>
+    
+  </p>
+
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-toggle");
+    const menu = document.getElementById("global-menu");
+    if (!btn || !menu) return;
+
+    const openMenu = () => {
+      menu.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("menu-open");
+    };
+
+    const closeMenu = () => {
+      menu.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    };
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      expanded ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  });
+</script>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentHost = window.location.hostname;
+        document
+          .querySelectorAll('a[href^="http"]')
+          .forEach(link => {
+            const url = new URL(link.href);
+            if (url.hostname !== currentHost) {
+              link.setAttribute("target", "_blank");
+              link.setAttribute("rel", "noopener noreferrer");
+            }
+          });
+      });
+    </script>
+
+
+<script>
+  const SITE_TITLES = [
+    "J-H",
+    "j-h",
+    "Jaydashaitch",
+    "제이대시에이치",
+    "제이(대시)에이치",
+    "JAY(DASH)AITCH",
+    "Jaehyeon Lee",
+    "Jae-Hyeon",
+    "jay-aitch",
+    "JAE(DASH)HYEON"
+  ];
+  
+  function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)];
+  }
+  
+  function pickRandomDifferent(list, current) {
+    const pool = list.filter(item => item !== current);
+    return pool.length
+      ? pool[Math.floor(Math.random() * pool.length)]
+      : current;
+  }
+  
+  (function () {
+    const titleEl = document.getElementById("site-title");
+    const footerEl = document.getElementById("footer-site-title");
+    if (!titleEl || !footerEl) return;
+  
+    const KEY = "jh_site_title";
+  
+    const renderTitle = (el, text) => {
+      el.innerHTML = "";
+      [...text].forEach(char => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        el.appendChild(span);
+      });
+    };
+  
+    if (!sessionStorage.getItem(KEY)) {
+      sessionStorage.setItem(KEY, pickRandom(SITE_TITLES));
+    }
+  
+    const initial = sessionStorage.getItem(KEY);
+    renderTitle(titleEl, initial);
+    footerEl.textContent = initial;
+  
+    titleEl.addEventListener("click", (e) => {
+      e.preventDefault();
+  
+      const basePath = new URL("https:&#x2F;&#x2F;jaehyeonleeweb.github.io&#x2F;j-h-2026").pathname.replace(/\/$/, "");
+      const IS_HOME =
+        window.location.pathname === basePath + "/" ||
+        window.location.pathname === basePath + "/kr/";
+  
+      if (!IS_HOME) {
+        window.location.href = titleEl.href;
+        return;
+      }
+  
+      const current = sessionStorage.getItem(KEY);
+      const next = pickRandomDifferent(SITE_TITLES, current);
+      sessionStorage.setItem(KEY, next);
+  
+      const layer = document.createElement("div");
+      layer.className = "falling-layer";
+      document.body.appendChild(layer);
+  
+      [...titleEl.children].forEach(originalSpan => {
+        const rect = originalSpan.getBoundingClientRect();
+  
+        const span = document.createElement("span");
+        span.className = "falling-char";
+        span.textContent = originalSpan.textContent;
+  
+        span.style.left = `${rect.left}px`;
+        span.style.top = `${rect.top}px`;
+        span.style.animationDelay = `${Math.random() * 0.15}s`;
+        span.style.animationDuration = `${1.2 + Math.random() * 1.6}s`;
+  
+        layer.appendChild(span);
+      });
+  
+      titleEl.classList.add("is-switching");
+  
+      renderTitle(titleEl, next);
+      footerEl.textContent = next;
+  
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          titleEl.classList.remove("is-switching");
+        });
+      });
+  
+      setTimeout(() => {
+        layer.remove();
+      }, 2000);
+    });
+  })();
+</script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const target = document.getElementById("footer-variant");
+        if (!target) return;
+      
+        const lang = document.documentElement.lang;
+      
+        const variants = lang === "ko"
+          ? [
+              "(한동안은)",
+              "(당분간은)",
+              "(얼마간은)",
+              "(현재로서는)",
+              "(일단은)",
+              "(우선은)",
+              "(잠시나마)",
+              "(당장까지는)",
+              "(지금으로서는)",
+              "(일정 기간동안은)",
+              "(잠정적으로)",
+              "(잠시 동안은)",
+              "(지금은 계속)"
+            ]
+          : [
+              "(for a while)",
+              "(for now)",
+              "(for the time being)",
+              "(temporarily)",
+              "(for the moment)",
+              "(in the meantime)",
+              "(for some time)",
+              "(briefly)",
+              "(until further notice)",
+              "(as of now)",
+              "(for a certain period)",
+              "(still)",
+              "(for a short while)"
+            ];
+      
+        let current = target.textContent;
+      
+        const pickNext = () => {
+          let next;
+          do {
+            next = variants[Math.floor(Math.random() * variants.length)];
+          } while (next === current);
+      
+          current = next;
+          target.textContent = next;
+        };
+      
+        setInterval(pickNext, 1000);
+      });
+      </script>
+  
+  <script>
+    (function () {
+    
+      const tooltip = document.createElement("div");
+      tooltip.id = "menu-tooltip";
+      document.body.appendChild(tooltip);
+    
+      const canHover = window.matchMedia("(hover: hover)").matches;
+    
+      function position(x, y) {
+        const offset = 6;
+    
+        tooltip.style.left = x + offset + "px";
+        tooltip.style.top = y + "px";
+    
+        tooltip.style.height = "";
+        tooltip.style.lineHeight = "";
+    
+        tooltip.style.bottom = "";
+        tooltip.style.transform = "";
+      }
+    
+      function show(message, x, y) {
+        tooltip.textContent = message;
+        tooltip.classList.add("is-visible");
+    
+        position(x, y);
+    
+        if (!canHover) {
+          clearTimeout(tooltip._timer);
+    
+          tooltip._timer = setTimeout(() => {
+            tooltip.classList.remove("is-visible");
+          }, 900);
+        }
+      }
+    
+      function getTextRect(el) {
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        return range.getBoundingClientRect();
+      }
+    
+      if (canHover) {
+    
+        document.addEventListener("mouseover", (e) => {
+    
+          const disabled = e.target.closest(".menu-item--disabled");
+          if (!disabled) return;
+    
+          const lang = document.documentElement.lang;
+    
+          show(
+            lang === "ko" ? "준비중..." : "Coming soon...",
+            e.clientX,
+            e.clientY
+          );
+    
+        });
+    
+        document.addEventListener("mousemove", (e) => {
+          if (!tooltip.classList.contains("is-visible")) return;
+    
+          position(e.clientX, e.clientY);
+        });
+    
+        document.addEventListener("mouseout", (e) => {
+          if (!e.target.closest(".menu-item--disabled")) return;
+    
+          tooltip.classList.remove("is-visible");
+        });
+    
+      } else {
+    
+        document.addEventListener("touchstart", (e) => {
+    
+          const disabled = e.target.closest(".menu-item--disabled");
+          if (!disabled) return;
+    
+          const lang = document.documentElement.lang;
+          const rect = getTextRect(disabled);
+    
+          show(
+            lang === "ko" ? "준비중..." : "Coming soon...",
+            rect.right,
+            rect.top
+          );
+    
+        });
+    
+      }
+    
+    })();
+    </script>
+
+
+  </body>
+</html>
